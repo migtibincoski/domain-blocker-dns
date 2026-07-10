@@ -1,0 +1,32 @@
+{
+  "name": "domain-blocker-dns",
+  "description": "A simple DNS server that blocks domains based on a list of blocked domains.",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "author": "Miguel Tibincoski <contato@migtibincoski.is-a.dev>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "postbuild": "shx mkdir -p dist/schema && shx cp src/schema/settings.json dist/schema/settings.json && html-minifier-terser --collapse-whitespace --minify-css true --minify-js true -o dist/block.html src/block.html",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.1.1",
+    "@types/supertest": "^7.2.0",
+    "html-minifier-terser": "^7.2.0",
+    "shx": "^0.4.0",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  },
+  "dependencies": {
+    "dns2": "^3.0.0",
+    "express": "^5.2.1",
+    "supertest": "^7.2.2"
+  }
+}

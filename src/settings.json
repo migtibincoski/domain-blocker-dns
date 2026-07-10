@@ -1,0 +1,13 @@
+{
+  "$schema": "./schema/settings.json",
+  "dns": [
+    "1.1.1.1",
+    "8.8.8.8"
+  ],
+  "blockedDomains": [
+    "example.com",
+    "test.com",
+    "*.blocked.com"
+  ],
+  "redirectUrl": ""
+}

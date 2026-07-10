@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Settings Schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "The URI of the JSON Schema that defines the structure of this settings file."
+    },
+    "dns": {
+      "type": "array",
+      "description": "An array of DNS server IP addresses to be used for resolving domain names.",
+      "items": {
+        "type": "string",
+        "format": "ipv4"
+      }
+    },
+    "blockedDomains": {
+      "type": "array",
+      "description": "An array of domain names to be blocked.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "redirectUrl": {
+      "type": "string",
+      "description": "The URL to which the user will be redirected when a blocked domain is accessed."
+    }
+  },
+  "required": [
+    "dns"
+  ],
+  "additionalProperties": false
+}
