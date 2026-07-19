@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
+    "open-ports": "tsx src/open-ports.ts",
     "build": "tsc",
     "postbuild": "shx mkdir -p dist/schema && shx cp src/schema/settings.json dist/schema/settings.json && html-minifier-terser --collapse-whitespace --minify-css true --minify-js true -o dist/block.html src/block.html",
     "test": "vitest run"
